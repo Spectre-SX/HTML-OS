@@ -1,7 +1,7 @@
-Terms of Service (ToS)
-Last updated: June 28, 2025
+# Terms of Service (ToS)
+**Last updated: June 28, 2025**
 
-Welcome to HTML-OS! By using our site, you agree to the following terms:
+**Welcome to HTML-OS! By using our site, you agree to the following terms:**
 
 Use of Service
 Our app helps you get weather data by temporarily collecting your location. You agree to provide accurate information and use the app responsibly.
