@@ -19,4 +19,4 @@ We use public weather APIs to get weather data. They may have their own privacy 
 You can stop sharing your location anytime by turning off location permissions in your device settings.
 
 **Changes to This Policy**
-If we update this policy, we’ll let you know through the app.
+If we update this policy, we’ll let you know through the site.
