@@ -304,4 +304,15 @@ windows.forEach(({win, header}) => {
   });
 });
 
+function loadWebsite() {
+  const urlInput = document.getElementById("browser-url");
+  let url = urlInput.value.trim();
+
+  // Add https:// if user forgot it
+  if (!url.startsWith("http://") && !url.startsWith("https://")) {
+    url = "https://" + url;
+  }
+
+  document.getElementById("browser-frame").src = url;
+}
 
