@@ -1,0 +1,525 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #app {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://images.wallpapersden.com/image/download/starry-landscape-4k-cool-blue-moon_bW5tbG6UmZqaraWkpJRobWllrWdma2U.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  overflow: hidden;
+}
+
+/* SCREEN LAYOUT */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 30, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+}
+
+.screen.hidden {
+  display: none;
+}
+
+.screen.active {
+  display: flex;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  width: 250px;
+  max-width: 90vw;
+}
+
+button {
+  background: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #357ABD;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.switch-screen-text {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.link {
+  color: #4a90e2;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* SPINNER CONTAINER */
+#spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* SPINNER ANIMATION */
+.spinner {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner span {
+  position: absolute;
+  top: 50%;
+  width: 35px;
+  height: 7px;
+  background: #fff;
+  box-shadow: 2px 2px 3px 0px black;
+  animation: dominos 1s ease infinite;
+}
+
+.spinner span:nth-child(1) { left: 80px; animation-delay: 0.125s; }
+.spinner span:nth-child(2) { left: 70px; animation-delay: 0.3s; }
+.spinner span:nth-child(3) { left: 60px; animation-delay: 0.425s; }
+.spinner span:nth-child(4) { left: 50px; animation-delay: 0.54s; }
+.spinner span:nth-child(5) { left: 40px; animation-delay: 0.665s; }
+.spinner span:nth-child(6) { left: 30px; animation-delay: 0.79s; }
+.spinner span:nth-child(7) { left: 20px; animation-delay: 0.915s; }
+.spinner span:nth-child(8) { left: 10px; animation-delay: 1.04s; }
+
+@keyframes dominos {
+  50% { opacity: 0.7; }
+  75% { transform: rotate(90deg); }
+  80% { opacity: 1; }
+}
+
+/* WELCOME SCREEN */
+#welcome-screen h1 {
+  font-size: 3rem;
+  user-select: none;
+}
+
+/* DESKTOP */
+#desktop-screen {
+  background: transparent;
+  color: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Desktop Icons */
+.icon-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.icon {
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.icon img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 5px;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.7));
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* TASKBAR */
+#taskbar {
+  height: 50px;
+  background: rgba(25, 25, 40, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  box-shadow: inset 0 1px 5px #0006;
+}
+
+#taskbar .icon {
+  width: 40px;
+  cursor: pointer;
+}
+
+#taskbar .icon img {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.5));
+}
+
+#logout-btn {
+  margin-left: auto;
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 12px;
+  transition: color 0.3s ease;
+}
+
+#logout-btn:hover {
+  color: #ff5555;
+}
+
+/* APP WINDOWS */
+#apps {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  pointer-events: none;
+}
+
+.app-window {
+  position: absolute;
+  background: rgba(35, 35, 45, 0.95);
+  border-radius: 6px;
+  width: 450px;
+  height: 300px;
+  box-shadow: 0 0 15px #000a;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  user-select: text;
+}
+
+.app-window .app-header {
+  background: #1e90ff;
+  padding: 8px 12px;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  user-select: none;
+  cursor: default;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.close-btn:hover {
+  color: #ff5555;
+}
+
+.app-content {
+  flex: 1;
+  background: white;
+  color: black;
+  padding: 10px;
+  overflow: auto;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.app-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.app-content textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Position app windows center */
+#file-explorer-window {
+  top: 70px;
+  left: 40px;
+}
+
+#browser-window {
+  top: 90px;
+  left: 520px;
+}
+
+#notepad-window {
+  top: 120px;
+  left: 300px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180px;
+  width: 280px;
+  border-radius: 25px;
+  background: lightgrey;
+  overflow: hidden;
+  transition: 100ms ease;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 3px 4px;
+}
+
+/* ---------- Info section ---------- */
+
+.info-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 75%;
+  color: white;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  z-index: 1;
+  padding-left: 18px;
+}
+
+button {
+  display: block;
+  border: none;
+  background: transparent;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.weather div {
+  display: flex;
+  align-items: center;
+}
+
+.weather div:nth-child(1) {
+  width: 40%;
+  height: auto;
+}
+
+.temperature {
+  font-size: 34pt;
+  font-weight: 500;
+  line-height: 8%;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 100%;
+  padding-right: 18px;
+  z-index: 1;
+}
+
+.right-side > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hour {
+  font-size: 19pt;
+  line-height: 1em;
+}
+
+.date {
+  font-size: 15px;
+}
+
+/* ---------- Background ---------- */
+.background-design {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #ec7263;
+  overflow: hidden;
+}
+
+.circle {
+  background-color: #efc745;
+}
+
+.circle:nth-child(1) {
+  position: absolute;
+  top: -80%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  opacity: 0.4;
+  border-radius: 50%;
+}
+
+.circle:nth-child(2) {
+  position: absolute;
+  top: -70%;
+  right: -30%;
+  width: 210px;
+  height: 210px;
+  opacity: 0.4;
+  border-radius: 50%;
+}
+
+.circle:nth-child(3) {
+  position: absolute;
+  top: -35%;
+  right: -8%;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  border-radius: 50%;
+}
+
+/* ---------- Days section ---------- */
+.days-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 25%;
+  background-color: #974859;
+  gap: 2px;
+  box-shadow: inset 0px 2px 5px #974859;
+}
+
+.days-section button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #a75265;
+  box-shadow: inset 0px 2px 5px #974859;
+  cursor: pointer;
+  transition: 100ms ease;
+  gap: 5px;
+}
+
+.days-section button:hover {
+  scale: 0.9;
+  border-radius: 10px;
+}
+
+.days-section .day {
+  font-size: 10pt;
+  font-weight: 500;
+  color: white;
+  opacity: 0.7;
+}
+
+.icon-weather-day {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 100%;
+}
+
+.pinned-widget {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 400px;
+  height: 20vh;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: rgba(44, 62, 80, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  color: white;
+  user-select: none;
+  padding: 20px;
+}
+
+.window-header {
+  user-select: none; /* no annoying text selection while dragging */
+  background-color: #222;
+  color: white;
+  padding: 8px;
+  cursor: move;
+  /* add other styling to make it look like a header */
+  position: relative;
+  z-index: 10;
+}
+
+.app-window {
+  position: absolute; /* super important for dragging */
+  border: 1px solid #444;
+  background: #333;
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  overflow: hidden;
+  resize: none; /* disable native resize, we handle it */
+}
+
+
+
+
