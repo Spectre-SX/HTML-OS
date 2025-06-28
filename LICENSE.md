@@ -1,7 +1,7 @@
 # 📄 Proprietary Software License
 **Copyright © 2025 Spectre-SX**
 
-This Software License Agreement (the “Agreement”) is a legal agreement between you (the “User”) and [Your Name or Company] (“Licensor”) for the use of this software and any associated materials (the “Software”).
+This Software License Agreement (the “Agreement”) is a legal agreement between you (the “User”) and Spectre-SX (“Licensor”) for the use of this software and any associated materials (the “Software”).
 
 1. Grant of License
 Licensor hereby grants the User a non-exclusive, non-transferable, revocable license to use the Software solely for personal and non-commercial purposes.
