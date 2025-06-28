@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Windows Vibez OS Mockup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Signup Screen -->
+    <div id="signup-screen" class="screen active">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-username" placeholder="Username" />
+      <input type="password" id="signup-password" placeholder="Password" />
+      <button id="signup-btn">Sign Up</button>
+      <p class="switch-screen-text">
+        Already have an account? <span id="go-to-login" class="link">Log In</span>
+      </p>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen">
+      <h2>Log In</h2>
+      <input type="text" id="login-username" placeholder="Username" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button id="login-btn">Log In</button>
+      <p class="switch-screen-text">
+        Don't have an account? <span id="go-to-signup" class="link">Sign Up</span>
+      </p>
+      <button id="skip-login-btn">Skip Login</button>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="spinner-container" class="hidden">
+      <div class="spinner">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen hidden">
+      <h1>Welcome to your Desktop 🌌</h1>
+    </div>
+
+    <!-- Desktop Screen -->
+    <div id="desktop-screen" class="screen hidden">
+      <!-- Desktop Icons -->
+      <div id="desktop-icons" class="icon-container">
+        <div class="icon" id="file-explorer-desktop">
+          <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png" alt="File Explorer" />
+          <span>File Explorer</span>
+        </div>
+        <div class="icon" id="browser-desktop">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Browser" />
+          <span>Browser</span>
+        </div>
+        <div class="icon" id="notepad-desktop">
+          <img src="https://cdn-icons-png.flaticon.com/512/136/136539.png" alt="Notepad" />
+          <span>Notepad</span>
+        </div>
+      </div>
+
+      <!-- Taskbar -->
+      <div id="taskbar">
+        <div class="icon" id="file-explorer-taskbar" title="File Explorer">
+          <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png" alt="File Explorer" />
+        </div>
+        <div class="icon" id="browser-taskbar" title="Browser">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Browser" />
+        </div>
+        <div class="icon" id="notepad-taskbar" title="Notepad">
+          <img src="https://cdn-icons-png.flaticon.com/512/136/136539.png" alt="Notepad" />
+        </div>
+        <div id="logout-btn" title="Log Out">🚪</div>
+      </div>
+
+      <!-- App Windows -->
+      <div id="apps">
+        <div class="app-window hidden" id="file-explorer-window">
+          <div class="app-header">
+            File Explorer
+            <button class="close-btn" data-app="file-explorer-window">✕</button>
+          </div>
+          <div class="app-content">File Explorer is under construction.</div>
+        </div>
+
+        <div class="app-window hidden" id="browser-window">
+          <div class="app-header">
+            Browser
+            <button class="close-btn" data-app="browser-window">✕</button>
+          </div>
+          <div class="app-content">
+            <iframe src="https://www.example.com" frameborder="0"></iframe>
+          </div>
+        </div>
+
+        <div class="app-window hidden" id="notepad-window">
+          <div class="app-header">
+            Notepad
+            <button class="close-btn" data-app="notepad-window">✕</button>
+          </div>
+          <textarea class="app-content" placeholder="Type your notes here..."></textarea>
+        </div>
+      </div>
+
+      <!-- DESKTOP WIDGET -->
+       <link rel="stylesheet" href="style.css" />
+        <div class="pinned-widget">
+          <section class="info-section">
+            <div class="background-design">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+            <div class="left-side">
+              <div class="weather">
+                <div>
+                  <svg
+                    stroke="#ffffff"
+                    fill="#ffffff"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1024 1024"
+                  >
+                    <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                    <g
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                      id="SVGRepo_tracerCarrier"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M512 704a192 192 0 1 0 0-384 192 192 0 0 0 0 384zm0 64a256 256 0 1 1 0-512 256 256 0 0 1 0 512zm0-704a32 32 0 0 1 32 32v64a32 32 0 0 1-64 0V96a32 32 0 0 1 32-32zm0 768a32 32 0 0 1 32 32v64a32 32 0 1 1-64 0v-64a32 32 0 0 1 32-32zM195.2 195.2a32 32 0 0 1 45.248 0l45.248 45.248a32 32 0 1 1-45.248 45.248L195.2 240.448a32 32 0 0 1 0-45.248zm543.104 543.104a32 32 0 0 1 45.248 0l45.248 45.248a32 32 0 0 1-45.248 45.248l-45.248-45.248a32 32 0 0 1 0-45.248zM64 512a32 32 0 0 1 32-32h64a32 32 0 0 1 0 64H96a32 32 0 0 1-32-32zm768 0a32 32 0 0 1 32-32h64a32 32 0 1 1 0 64h-64a32 32 0 0 1-32-32zM195.2 828.8a32 32 0 0 1 0-45.248l45.248-45.248a32 32 0 0 1 45.248 45.248L240.448 828.8a32 32 0 0 1-45.248 0zm543.104-543.104a32 32 0 0 1 0-45.248l45.248-45.248a32 32 0 0 1 45.248 45.248l-45.248 45.248a32 32 0 0 1-45.248 0z"
+                        fill="#ffffff"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div>Sunny</div>
+              </div>
+              <div class="temperature">36°</div>
+              <div class="range">42°/28°</div>
+            </div>
+            <div class="right-side">
+              <div>
+                <div class="hour">23:56</div>
+                <div class="date">MON 08-23</div>
+              </div>
+              <div class="city">A Coruña</div>
+            </div>
+          </section>
+          <section class="days-section">
+            <button>
+              <span class="day">TUE</span>
+              <span class="icon-weather-day"
+                ><svg
+                  stroke="#ffffff"
+                  fill="#ffffff"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1024 1024"
+                >
+                  <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    id="SVGRepo_tracerCarrier"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M512 704a192 192 0 1 0 0-384 192 192 0 0 0 0 384zm0 64a256 256 0 1 1 0-512 256 256 0 0 1 0 512zm0-704a32 32 0 0 1 32 32v64a32 32 0 0 1-64 0V96a32 32 0 0 1 32-32zm0 768a32 32 0 0 1 32 32v64a32 32 0 1 1-64 0v-64a32 32 0 0 1 32-32zM195.2 195.2a32 32 0 0 1 45.248 0l45.248 45.248a32 32 0 1 1-45.248 45.248L195.2 240.448a32 32 0 0 1 0-45.248zm543.104 543.104a32 32 0 0 1 45.248 0l45.248 45.248a32 32 0 0 1-45.248 45.248l-45.248-45.248a32 32 0 0 1 0-45.248zM64 512a32 32 0 0 1 32-32h64a32 32 0 0 1 0 64H96a32 32 0 0 1-32-32zm768 0a32 32 0 0 1 32-32h64a32 32 0 1 1 0 64h-64a32 32 0 0 1-32-32zM195.2 828.8a32 32 0 0 1 0-45.248l45.248-45.248a32 32 0 0 1 45.248 45.248L240.448 828.8a32 32 0 0 1-45.248 0zm543.104-543.104a32 32 0 0 1 0-45.248l45.248-45.248a32 32 0 0 1 45.248 45.248l-45.248 45.248a32 32 0 0 1-45.248 0z"
+                      fill="#ffffff"
+                    ></path>
+                  </g></svg
+              ></span>
+            </button>
+            <button>
+              <span class="day">WED</span>
+              <span class="icon-weather-day">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#ffffff"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M16 18.5L15 21M8 18.5L7 21M12 18.5L11 21M7 15C4.23858 15 2 12.7614 2 10C2 7.23858 4.23858 5 7 5C7.03315 5 7.06622 5.00032 7.09922 5.00097C8.0094 3.2196 9.86227 2 12 2C14.5192 2 16.6429 3.69375 17.2943 6.00462C17.3625 6.00155 17.4311 6 17.5 6C19.9853 6 22 8.01472 22 10.5C22 12.9853 19.9853 15 17.5 15C13.7434 15 11.2352 15 7 15Z"
+                      stroke="#ffffff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                </svg>
+              </span>
+            </button>
+            <button>
+              <span class="day">THU</span>
+              <span class="icon-weather-day">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#ffffff"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M16 18.5L15 21M8 18.5L7 21M12 18.5L11 21M7 15C4.23858 15 2 12.7614 2 10C2 7.23858 4.23858 5 7 5C7.03315 5 7.06622 5.00032 7.09922 5.00097C8.0094 3.2196 9.86227 2 12 2C14.5192 2 16.6429 3.69375 17.2943 6.00462C17.3625 6.00155 17.4311 6 17.5 6C19.9853 6 22 8.01472 22 10.5C22 12.9853 19.9853 15 17.5 15C13.7434 15 11.2352 15 7 15Z"
+                      stroke="#ffffff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                </svg>
+              </span>
+            </button>
+            <button>
+              <span class="day">FRI</span>
+              <span class="icon-weather-day">
+                <svg
+                  stroke="#ffffff"
+                  fill="#ffffff"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1024 1024"
+                >
+                  <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    id="SVGRepo_tracerCarrier"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M512 704a192 192 0 1 0 0-384 192 192 0 0 0 0 384zm0 64a256 256 0 1 1 0-512 256 256 0 0 1 0 512zm0-704a32 32 0 0 1 32 32v64a32 32 0 0 1-64 0V96a32 32 0 0 1 32-32zm0 768a32 32 0 0 1 32 32v64a32 32 0 1 1-64 0v-64a32 32 0 0 1 32-32zM195.2 195.2a32 32 0 0 1 45.248 0l45.248 45.248a32 32 0 1 1-45.248 45.248L195.2 240.448a32 32 0 0 1 0-45.248zm543.104 543.104a32 32 0 0 1 45.248 0l45.248 45.248a32 32 0 0 1-45.248 45.248l-45.248-45.248a32 32 0 0 1 0-45.248zM64 512a32 32 0 0 1 32-32h64a32 32 0 0 1 0 64H96a32 32 0 0 1-32-32zm768 0a32 32 0 0 1 32-32h64a32 32 0 1 1 0 64h-64a32 32 0 0 1-32-32zM195.2 828.8a32 32 0 0 1 0-45.248l45.248-45.248a32 32 0 0 1 45.248 45.248L240.448 828.8a32 32 0 0 1-45.248 0zm543.104-543.104a32 32 0 0 1 0-45.248l45.248-45.248a32 32 0 0 1 45.248 45.248l-45.248 45.248a32 32 0 0 1-45.248 0z"
+                      fill="#ffffff"
+                    ></path>
+                  </g>
+                </svg>
+              </span>
+            </button>
+          </section>
+        </div>
+
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
