@@ -8,7 +8,7 @@
 body, html, #app {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('/HTML-OS/Wallpaper.jpg') no-repeat center center fixed;
+  background: url('/HTML-OS/wallpaper.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
   overflow: hidden;
